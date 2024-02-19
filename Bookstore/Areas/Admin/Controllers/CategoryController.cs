@@ -140,7 +140,7 @@ namespace Bookstore.Areas.Admin.Controllers
 
         public IActionResult Create()
         {
-            return View(new EditCreateVM());
+            return View(new EditCreateVM());//d
         }
     }
 }
