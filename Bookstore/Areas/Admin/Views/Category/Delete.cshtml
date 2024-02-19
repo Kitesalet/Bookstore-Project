@@ -1,0 +1,43 @@
+﻿@model EditCreateVM
+
+<div class="card border-0 shadow mt-4">
+    <div class="card-header bg-secondary bg-gradient ml-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-white py-2">Delete Category</h2>
+            </div>
+        </div>
+    </div>
+    <div class="card-body p-4">
+        <form method="post" asp-controller="Category" asp-action="Delete">
+            <input type="hidden" asp-for="Id" value="@Model.Id" />
+            <div class="border p-3 mt-4">
+                <div class="form-floating py-2 col-12">
+                    <input disabled asp-for="Name" type="text" class="form-control border-0 shadow" />
+                    <label class="" asp-for="Name"></label>
+                </div>
+                <div class="form-floating py-2 col-12">
+                    <input  disabled asp-for="DisplayOrder" class="form-control border-0 shadow" />
+                    <label class="" asp-for="DisplayOrder"></label>
+                </div>
+                <div class="row">
+                    <div class="p-0 col-6 col-sm-4 col-md-4">
+                        <button class="btn btn-primary form-control" type="submit">Delete</button>
+                    </div>
+                    <div class="px-2 col-6 col-sm-4 col-md-4">
+                        <a asp-controller="Category" asp-action="Index" class="btn btn-outline-secondary form-control">
+                            Back to List
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+
+
+@section Scripts{ 
+        <partial name="_ValidationScriptsPartial" />    
+}

@@ -1,0 +1,38 @@
+﻿@model CompanyVM
+
+<div class="card border-0 shadow mt-4">
+    <div class="card-header bg-secondary bg-gradient ml-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-white py-2">Company List</h2>
+            </div>
+        </div>
+    </div>
+    <div class="card-body p-4">
+        <div class="container-fluid pb-2">
+            <div class="row d-flex justify-content-center">
+                <div class="col p-0 d-flex justify-content-end">
+                    <a class="btn btn-primary" asp-controller="Company" asp-action="Upsert">Create New Company<i class="bi bi-plus-circle-fill"></i></a>
+                </div>
+            </div>
+        </div>
+        <table id="myTable" class="table table-bordered table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Street Address</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Postal Code</th>
+                    <th>Phone Number</th>
+                    <th></th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+
+
+@section Scripts{
+    <script src="~/js/company.js" defer></script>
+}

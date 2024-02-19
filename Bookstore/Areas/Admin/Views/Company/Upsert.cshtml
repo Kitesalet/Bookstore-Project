@@ -1,0 +1,66 @@
+﻿@model CompanyVM
+
+<div class="card border-0 shadow mt-4">
+    <div class="card-header bg-secondary bg-gradient ml-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-white py-2">@(Model.Company.Id != 0 ? "Update" : "Create") Company</h2>
+            </div>
+        </div>
+    </div>
+    <div class="card-body p-4 my-3">
+        <form class="row" method="post" asp-controller="Company" asp-action="Upsert" enctype="multipart/form-data">
+            <input asp-for="Company.Id" type="hidden"/>
+            <div class="row">
+                <div class="col-12">
+                    <div class="border p-3 row">
+                        <div class="form-floating mb-3 col-12 col-sm-6">
+                            <input asp-for="Company.Name" type="text" class="form-control border-0 shadow" />
+                            <label class="text-muted ms-2" asp-for="Company.Name"></label>
+                            <span asp-validation-for="Company.Name" class="text-primary"></span>
+                        </div>
+                        <div class="form-floating mb-3 col-12 col-sm-6">
+                            <input asp-for="Company.City" type="text" class="form-control border-0 shadow" />
+                            <label class="text-muted ms-2" asp-for="Company.City"></label>
+                            <span asp-validation-for="Company.City" class="text-primary"></span>
+                        </div>
+                        <div class="form-floating mb-3 col-12 col-sm-6">
+                            <input asp-for="Company.StreetAddress" type="text" class="form-control border-0 shadow" />
+                            <label class="text-muted ms-2" asp-for="Company.StreetAddress"></label>
+                        </div>
+                        <div class="form-floating mb-3 col-12 col-sm-6">
+                            <input asp-for="Company.State" type="text" class="form-control border-0 shadow" />
+                            <label class="text-muted ms-2" asp-for="Company.State"></label>
+                            <span asp-validation-for="Company.State" class="text-primary"></span>
+                        </div>
+                        <div class="form-floating mb-3 col-12 col-sm-6">
+                            <input asp-for="Company.PostalCode" type="string" class="form-control border-0 shadow" />
+                            <label class="text-muted ms-2" asp-for="Company.PostalCode"></label>
+                            <span asp-validation-for="Company.PostalCode" class="text-primary"></span>
+                        </div>
+                        <div class="form-floating mb-3 col-12 col-sm-6">
+                            <input asp-for="Company.PhoneNumber" type="number" class="form-control border-0 shadow" />
+                            <label class="text-muted ms-2" asp-for="Company.PhoneNumber"></label>
+                            <span asp-validation-for="Company.PhoneNumber" class="text-primary"></span>
+                        </div>                    
+                        <div class="row pt-2">
+                            <div class="p-0 col-6 col-sm-4 col-md-4">
+                                <button class="btn btn-primary form-control" type="submit">@(Model.Company.Id != 0 ? "Update" : "Create")</button>
+                            </div>
+                            <div class="px-2 col-6 col-sm-4 col-md-4">
+                                <a asp-controller="Company" asp-action="Index" class="btn btn-outline-secondary form-control">
+                                    Back to List
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />    
+}
